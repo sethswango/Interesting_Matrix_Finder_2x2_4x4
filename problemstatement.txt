@@ -1,0 +1,96 @@
+MATRIX CONCATENATION PROPERTY SEARCH
+===================================
+
+GOAL:
+Find all pairs of 2×2 matrices A and B where their matrix multiplication result equals a matrix formed by digit concatenation.
+
+GIVEN:
+Two 2×2 matrices A and B containing single digits (1-9):
+
+A = [a00 a01]    B = [b00 b01]
+    [a10 a11]        [b10 b11]
+
+where aij and bij are integers from 1 to 9.
+
+STEP 1: MATRIX MULTIPLICATION
+Compute matrix C using standard matrix multiplication:
+
+C = A × B = [c00 c01]
+           [c10 c11]
+
+where:
+c00 = (a00×b00 + a01×b10)
+c01 = (a00×b01 + a01×b11)
+c10 = (a10×b00 + a11×b10)
+c11 = (a10×b01 + a11×b11)
+
+STEP 2: CONCATENATION RULE
+Form matrix D by concatenating corresponding elements:
+
+D = [d00 d01]
+    [d10 d11]
+
+where each dij is formed by:
+- Concatenating aij and bij in that order (Example: if aij=5, bij=8, then dij=58)
+
+Note: Since we test all possible matrix pairs, solutions where B×A works will be found 
+when testing that combination directly. This eliminates redundant checking while still 
+finding all unique solutions.
+
+SOLUTION CRITERIA:
+A pair of matrices A and B is a solution if and only if:
+1. C = D (the multiplication result equals the concatenation result)
+2. All elements in both matrices are single digits (1-9)
+
+DEMONSTRATION FORMAT (NOT AN ACTUAL SOLUTION):
+The following example illustrates the format of a valid solution, but is NOT verified to be a true solution:
+[6 2] × [3 1] = [63 21] = [63 21]
+[1 4]   [2 5]   [12 45]   [12 45]
+         ^         ^         ^
+         |         |         |
+    Matrix B    Matrix C   Matrix D
+    (input)    (multiply) (concat)
+
+Note: The above is merely to demonstrate the pattern we're looking for. The actual matrix multiplication may not equal the concatenation result in this specific case.
+
+IMPORTANT CLARIFICATIONS:
+1. Both conditions must be satisfied simultaneously
+2. Only corresponding positions are concatenated (a00 with b00, a01 with b01, etc.)
+3. Both forward and reverse concatenations are valid
+4. The multiplication result must exactly equal the concatenation result
+5. No leading zeros or multi-digit numbers are allowed in input matrices
+6. All numbers must be positive integers
+
+FUTURE WORK EXPECTATIONS
+=======================
+
+OUTPUT FORMAT:
+The program must generate a text file containing:
+1. Statistics section showing:
+   - Total permutations tested
+   - Number of matching pairs found
+   - Match rate (percentage)
+   - Execution time
+
+2. Results section showing only the first match found:
+   - Matrix A and B (inputs)
+   - Matrix C (multiplication result)
+   - Verification showing concatenation matches
+
+PERFORMANCE EXPECTATIONS:
+1. Solution must scale efficiently for larger matrices
+2. Memory usage should be optimized for parallel processing
+3. Results should be deduplicated before output
+4. Progress tracking should be maintained for long-running searches
+
+VALIDATION REQUIREMENTS:
+1. All matrix elements must be single digits (1-9)
+2. Matrix multiplication must be verified against concatenation
+3. No leading zeros in any matrix elements
+4. All numbers must be positive integers
+
+FILE ORGANIZATION:
+1. One output file per search containing all matrix sizes
+2. Clear separation between statistics and results
+3. Human-readable format with proper alignment
+4. Timestamp of search completion

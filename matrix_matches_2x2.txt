@@ -1,0 +1,74 @@
+MATRIX CONCATENATION SEARCH STATISTICS
+==================================================
+
+2x2 Matrices:
+Total permutations tested: 43,046,721
+Matching pairs found: 5
+Match rate: 0.00001162%
+Execution time: 0:00:04.750616
+
+==================================================
+
+Found 5 matching matrix pairs
+--------------------------------------------------
+
+Match 1:
+[5 3] * [8 6] = [58 36]
+[3 2]   [6 2]   [36 22]
+
+Verification:
+C[0,0] = 58 is concatenation of 5 and 8
+C[0,1] = 36 is concatenation of 3 and 6
+C[1,0] = 36 is concatenation of 3 and 6
+C[1,1] = 22 is concatenation of 2 and 2
+
+--------------------------------------------------
+
+Match 2:
+[9 2] * [9 2] = [99 22]
+[9 2]   [9 2]   [99 22]
+
+Verification:
+C[0,0] = 99 is concatenation of 9 and 9
+C[0,1] = 22 is concatenation of 2 and 2
+C[1,0] = 99 is concatenation of 9 and 9
+C[1,1] = 22 is concatenation of 2 and 2
+
+--------------------------------------------------
+
+Match 3:
+[9 3] * [9 3] = [99 33]
+[6 2]   [6 2]   [66 22]
+
+Verification:
+C[0,0] = 99 is concatenation of 9 and 9
+C[0,1] = 33 is concatenation of 3 and 3
+C[1,0] = 66 is concatenation of 6 and 6
+C[1,1] = 22 is concatenation of 2 and 2
+
+--------------------------------------------------
+
+Match 4:
+[9 9] * [9 9] = [99 99]
+[2 2]   [2 2]   [22 22]
+
+Verification:
+C[0,0] = 99 is concatenation of 9 and 9
+C[0,1] = 99 is concatenation of 9 and 9
+C[1,0] = 22 is concatenation of 2 and 2
+C[1,1] = 22 is concatenation of 2 and 2
+
+--------------------------------------------------
+
+Match 5:
+[9 6] * [9 6] = [99 66]
+[3 2]   [3 2]   [33 22]
+
+Verification:
+C[0,0] = 99 is concatenation of 9 and 9
+C[0,1] = 66 is concatenation of 6 and 6
+C[1,0] = 33 is concatenation of 3 and 3
+C[1,1] = 22 is concatenation of 2 and 2
+
+--------------------------------------------------
+
