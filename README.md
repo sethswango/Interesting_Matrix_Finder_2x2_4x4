@@ -1,5 +1,4 @@
 # Interesting_Matrix_Finder_2x2_4x4
-Find pairs of 2x2 and 4x4 matricies where the dot product is equivalent to result of concatenating each term with the respective term in the same position.
 
 ![image](https://github.com/user-attachments/assets/e004d2a5-d8e8-4714-8bad-fb6b0b44cbb2)
 
